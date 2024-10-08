@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas de Dados</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+        .sidebar {
+            width: 220px;
+            background-color: #f8f9fa;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            flex-shrink: 0;
+        }
+        .content {
+            margin-left: 240px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .tabela {
+            max-width: 500px;
+            margin: 5px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background-color: #f2f2f2;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .card-body {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Barra Lateral</h2>
+    </div>
+    <div class="content">
+        <h1>Tabelas de Dados</h1>
+
+        <!-- Tabela 1 -->
+        <div class="card">
+            <div class="card-header">Tabela 1 - Total de Vendas por Fabricante, Marca e Rótulo</div>
+            <div class="card-body">
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            {% for col in total_volume_company_brand_label_transposed.columns %}
+                                <th>{{ col }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in total_volume_company_brand_label_transposed.values %}
+                            <tr>
+                                {% for cell in row %}
+                                    <td>{{ cell }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tabela 2 -->
+        <div class="card">
+            <div class="card-header">Tabela 2 - Volume de Vendas por Tipo e Fabricante Produtor</div>
+            <div class="card-body">
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            {% for col in volume_by_type_and_company_transposed.columns %}
+                                <th>{{ col }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in volume_by_type_and_company_transposed.values %}
+                            <tr>
+                                {% for cell in row %}
+                                    <td>{{ cell }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tabela 3 -->
+        <div class="card">
+            <div class="card-header">Tabela 3</div>
+            <div class="card-body">
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            {% for col in df_data.columns %}
+                                <th>{{ col }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in df_data.values %}
+                            <tr>
+                                {% for cell in row %}
+                                    <td>{{ cell }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tabela 4 -->
+        <div class="card">
+            <div class="card-header">Tabela 4</div>
+            <div class="card-body">
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            {% for col in df_data.columns %}
+                                <th>{{ col }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in df_data.values %}
+                            <tr>
+                                {% for cell in row %}
+                                    <td>{{ cell }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

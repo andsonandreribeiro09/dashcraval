@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="form-container register-container">
+        <div class="form-header">
+            <img src="/static/logo.png" alt="Logo" class="logo">
+            <h1>Registro</h1>
+        </div>
+        <form action="/register" method="post">
+            <div class="form-group">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Registrar</button>
+        </form>
+        <div class="links">
+            <a href="/login" class="link">Já tem uma conta? Faça login</a>
+        </div>
+    </div>
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>Craval Business @2024 Todos os direitos reservados</p>
+        
+    </footer>
+
+    <!-- Texto ao lado direito do contêiner -->
+    <div class="side-text">
+        <h2>Bem-vindo à nossa plataforma!</h2>
+        <p>Deixe-nos guiá-lo pelas complexidades do mercado latino-americano.</p>
+        <p>Entre e descubra tudo que podemos oferecer!</p>
+    </div>
+
+    
+
+</body>
+</html>

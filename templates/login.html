@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo" width="100" height="auto">
+
+            <h1>Login</h1>
+        </div>
+
+        <!-- Formulário de login -->
+        <form method="POST" action="{{ url_for('login') }}">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Links de registro e recuperação de senha -->
+        <div class="links">
+            <a href="{{ url_for('register') }}" class="link">Register User</a>
+            <a href="{{ url_for('recover_password') }}" class="link">Recover Password</a>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>Craval Business @2024 Todos os direitos reservados</p>
+        <p>Desenvolvido pela <strong>AWD Startup Application Programming Interface</strong></p>
+    </footer>
+</body>
+</html>
+

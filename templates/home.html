@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craval Business - Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .banner {
+            background-image: url('/static/imagem.png');
+            height: 600px;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .titulo-banner {
+            font-size: 48px;
+            font-weight: bold;
+        }
+        .subtitulo-banner {
+            font-size: 24px;
+        }
+        .sobre-nos, .solucoes, .contato {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .solucoes .card {
+            margin: 20px;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Craval Business</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#solucoes">Soluções</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contato">Contato</a>
+                </li>
+                <!-- Links para Login e Registro -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('register') }}">Registro</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Banner Principal -->
+    <div class="banner">
+        <div>
+            <h1 class="titulo-banner">Transformando dados em insights poderosos</h1>
+            <p class="subtitulo-banner">Liderando o mercado de informações inteligentes para o setor de Wine & Spirits</p>
+            
+        </div>
+    </div>
+
+    <!-- Seção Sobre a Empresa -->
+    <div class="sobre-nos" id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>A Craval Business é líder em sistemas de informação inteligente para o mercado de Wine & Spirits nas Américas.
+            Ajudamos nossos clientes a tomar decisões estratégicas com base em dados detalhados e insights precisos.
+        </p>
+        
+    </div>
+
+    <!-- Seção de Soluções -->
+    <div class="solucoes bg-light" id="solucoes">
+        <h2>Nossas Soluções</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/static/bigdata.png"  class="card-img-top" alt="Análise de Mercado">
+                    <div class="card-body">
+                        <h5 class="card-title">Análise de Mercado</h5>
+                        <p class="card-text">Processamento e análise de grandes volumes de dados para insights valiosos.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/static/IA.jpg" class="card-img-top" alt="Consultoria Estratégica">
+                    <div class="card-body">
+                        <h5 class="card-title">Consultoria Estratégica</h5>
+                        <p class="card-text">Sistemas inteligentes que aprendem e se adaptam para resolver problemas complexos.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/static/rag.png" class="card-img-top" alt="Machine Learning">
+                    <div class="card-body">
+                        <h5 class="card-title">Machine Learning</h5>
+                        <p class="card-text">Algoritmos avançados que melhoram automaticamente com a experiência.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção de Contato -->
+    <div class="contato" id="contato">
+        <h2>Entre em Contato</h2>
+        <p>Estamos prontos para ajudar sua empresa a alcançar o próximo nível. Entre em contato conosco para saber mais sobre nossas soluções.</p>
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Seu Nome" style="max-width: 500px; margin: auto;">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Seu E-mail" style="max-width: 500px; margin: auto;">
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" placeholder="Sua Mensagem" style="max-width: 500px; margin: auto; height: 150px;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2024 Craval Business. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
