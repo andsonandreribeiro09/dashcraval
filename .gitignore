@@ -1,0 +1,16 @@
+.anaconda/
+.bash_history
+.cache/
+.conda/
+.ipynb_checkpoints/
+.ipython/
+.jupyter/
+.keras/
+.vscode/
+__pycache__/
+*.pyc
+*.pyo
+*.db
+*.csv
+*.xlsx
+*.html

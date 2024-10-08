@@ -1,0 +1,344 @@
+/* Estilos gerais para a página de login */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #948fb1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/static/background.png'); /* Adicionando imagem de fundo */
+    background-size: 40% auto; /* Ajusta o tamanho da imagem para cobrir o fundo */
+    background-position: left center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Impede a repetição da imagem de fundo */
+    background-attachment: fixed; /* Fixa a imagem de fundo durante o rolar da página */
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Cor de fundo semitransparente para o container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ajustado para 100% */
+    max-width: 400px;
+    text-align: center;
+    margin-top: 20px; /* Ajuste este valor conforme necessário */
+    margin-bottom: 70px; /* Adiciona espaço embaixo para o rodapé */
+}
+
+.login-header {
+    margin-bottom: 20px;
+}
+
+/* Logo */
+.logo {
+    width: 150px; /* Ajuste o tamanho do logo conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-bottom: 10px; /* Espaço abaixo do logo */
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.titulo-selecao {
+    font-size: 16px; /* Ajuste o tamanho da fonte */
+    margin-bottom: 10px; /* Adiciona espaço abaixo do título */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Ajuste a largura conforme necessário */
+    padding: 15px;
+    border: 1px solid #a70404;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 15px; /* Adiciona espaço entre os campos */
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para a lista de mensagens */
+.messages {
+    list-style-type: none;
+    padding: 0;
+}
+
+.messages li {
+    margin-bottom: 10px;
+}
+
+/* Estilos para os links */
+.links {
+    margin-top: 15px;
+}
+
+.link {
+    display: block;
+    margin: 5px 0;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Ajuste do body para usar Flexbox */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empurra o conteúdo principal para o meio */
+    height: 100vh; /* Garante que o body ocupe 100% da altura da janela */
+    margin: 0;
+}
+
+/* Outras partes do conteúdo */
+/* Seu conteúdo principal fica dentro de um contêiner flexível */
+.login-container, .register-container {
+    flex-grow: 1; /* O conteúdo crescerá para ocupar o espaço disponível */
+}
+
+/* Estilos para o rodapé */
+.footer {
+    background-color: rgba(52, 51, 53, 0.9); /* Cor de fundo semitransparente para o rodapé */
+    padding: 3px;
+    text-align: center;
+    font-size: 10px;
+    color: #f7f4f4;
+    width: 100%; /* Garante que o rodapé ocupe toda a largura */
+    position: fixed; /* Fixa o rodapé na parte inferior da página */
+    bottom: 0; /* Garante que ele fique na parte inferior */
+    left: 0;
+}
+
+
+/* Estilos gerais para a página do dashboard */
+.dashboard-header {
+    margin-bottom: 20px;
+}
+
+h1.dashboard-title {
+    font-size: 24px;
+    color: #333;
+}
+
+.titulo-selecao {
+    font-size: 16px; /* Ajuste o tamanho da fonte */
+    margin-bottom: 10px; /* Adiciona espaço abaixo do título */
+}
+
+/* Estilos para o contêiner dos gráficos */
+.chart-container {
+    display: flex;
+    justify-content: flex-start; /* Alinha os gráficos à esquerda */
+    flex-wrap: wrap; /* Permite que os gráficos se movam para a linha seguinte se necessário */
+    margin: 20px auto;
+    width: 100%; /* Ocupar 100% da largura do contêiner */
+}
+
+/* Ajustes adicionais */
+.selecao-container {
+    width: 100%; /* Ajuste a largura para 60% ou o que preferir */
+    margin: 20px auto; /* Centraliza o contêiner */
+}
+
+
+/* Ajustes gerais para tabelas */
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 100%; /* Ocupar 100% da largura do container */
+}
+
+table {
+    width: 80%; /* Ajuste para garantir que a tabela não ocupe toda a largura */
+    max-width: 100%; /* Remove limite de 100px */
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+/* Estilos para a barra de seleção do país */
+.select-country {
+    width: 80%; /* Aumenta a largura da barra de seleção */
+    max-width: 400px; /* Define um tamanho máximo */
+    padding: 10px; /* Adiciona preenchimento interno */
+    border: 1px solid #ccc; /* Define a borda */
+    border-radius: 4px; /* Arredonda os cantos */
+    font-size: 16px; /* Aumenta o tamanho da fonte */
+    margin-bottom: 20px; /* Adiciona espaço abaixo */
+    background-color: #ffffff; /* Cor de fundo */
+}
+
+/* Estilo para o rótulo da seleção */
+.label-select {
+    font-size: 18px; /* Aumenta o tamanho do rótulo */
+    margin-bottom: 10px; /* Espaço abaixo do rótulo */
+    color: #333; /* Cor do texto */
+}
+
+/* Contêiner de registro */
+.register-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo semitransparente */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+
+.register-header {
+    margin-bottom: 20px;
+}
+
+/* Logo */
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #6f9170;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Links de navegação */
+.links {
+    margin-top: 15px;
+}
+
+.link {
+    display: block;
+    margin: 5px 0;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Contêiner principal que envolve o formulário e o texto */
+.register-page {
+    display: flex;
+    justify-content: space-between; /* Empurra o conteúdo para o lado direito */
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px;
+    
+}
+
+/* Estilo do contêiner de registro */
+.register-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    text-align: center;
+    margin-left: 20px; /* Espaçamento da margem esquerda */
+    width: 40%; /* Ocupar 40% da tela */
+}
+
+/* Texto ao lado direito, sem contêiner */
+.side-text {
+    color: #333;
+    font-size: 14px;
+    line-height: 1.0;
+    text-align: right; /* Alinha o texto à direita */
+    position: absolute; /* Fixa o texto na lateral direita */
+    right: 5px; /* Encosta o texto na margem direita */
+    
+    transform: translateY(-10%); /* Garante que o texto fique centralizado */
+}
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .register-page {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .register-container, .side-text {
+        margin-right: 0;
+        margin-bottom: 20px;
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .side-text {
+        position: relative;
+        right: auto;
+        text-align: center; /* Centraliza o texto em telas menores */
+    }
+}
