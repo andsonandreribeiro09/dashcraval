@@ -2,12 +2,12 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #948fb1;
+    background-color: #f6f6f8;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('/static/background.png'); /* Adicionando imagem de fundo */
+    /*background-image: url('/static/background.png'); /* Adicionando imagem de fundo */
     background-size: 40% auto; /* Ajusta o tamanho da imagem para cobrir o fundo */
     background-position: left center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Impede a repetição da imagem de fundo */
@@ -131,7 +131,7 @@ body {
     text-align: center;
     font-size: 10px;
     color: #f7f4f4;
-    width: 100%; /* Garante que o rodapé ocupe toda a largura */
+    width: 400%; /* Garante que o rodapé ocupe toda a largura */
     position: fixed; /* Fixa o rodapé na parte inferior da página */
     bottom: 0; /* Garante que ele fique na parte inferior */
     left: 0;
@@ -153,20 +153,93 @@ h1.dashboard-title {
     margin-bottom: 10px; /* Adiciona espaço abaixo do título */
 }
 
+
 /* Estilos para o contêiner dos gráficos */
 .chart-container {
     display: flex;
-    justify-content: flex-start; /* Alinha os gráficos à esquerda */
-    flex-wrap: wrap; /* Permite que os gráficos se movam para a linha seguinte se necessário */
-    margin: 20px auto;
-    width: 100%; /* Ocupar 100% da largura do contêiner */
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Alinha os cards à esquerda */
+    align-items: flex-start; /* Alinha os cards no topo */
+    gap: 20px; /* Espaçamento entre os cards */
+    margin-top: 20px;
+    margin-left: 0; /* Remove o espaçamento à esquerda */
+    padding-left: 20px; /* Adiciona um pequeno padding para que os cards não grudem diretamente na borda */
 }
 
-/* Ajustes adicionais */
-.selecao-container {
-    width: 100%; /* Ajuste a largura para 60% ou o que preferir */
-    margin: 20px auto; /* Centraliza o contêiner */
+/* Estilos para cada card de gráfico */
+.chart-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: none;
+    width: calc(50% - 30px); /* Ajuste para garantir que os cards caibam lado a lado */
+    max-width: 600px;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden; /* Garante que o conteúdo não exceda o card */
 }
+
+/* Estilo das colunas dos gráficos (dbc.Col) */
+.col-6 {
+    padding: 20px;
+    flex: 0 0 100%; /* Cada coluna ocupará 50% da linha */
+    max-width: 100%; /* Limita a largura da coluna a 50% */
+    box-sizing: border-box;
+}
+
+/* Ajuste responsivo para telas menores */
+@media (max-width: 768px) {
+    .chart-card {
+        width: 100%; /* Em telas pequenas, os cards ocupam 100% da largura */
+    }
+
+    .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%; /* Colunas ocupam 100% da largura em telas pequenas */
+    }
+}
+
+/* Estilo dos Cards (dbc.Card) */
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+/* Estilo dos Cabeçalhos dos Cards (dbc.CardHeader) */
+.card-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilo da seleção */
+.selection-container {
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+/* Estilo flex row */
+.flex-row {
+    display: flex;
+    justify-content: flex-start; /* Alinhamento à esquerda */
+}
+
+@media (max-width: 768px) {
+    .flex-row {
+        flex-direction: column; /* Empilha em telas pequenas */
+    }
+
+    .selection-container {
+        width: 100%;
+    }
+}
+
+
+
 
 
 /* Ajustes gerais para tabelas */
@@ -191,19 +264,19 @@ table th, table td {
 }
 /* Estilos para a barra de seleção do país */
 .select-country {
-    width: 80%; /* Aumenta a largura da barra de seleção */
-    max-width: 400px; /* Define um tamanho máximo */
-    padding: 10px; /* Adiciona preenchimento interno */
-    border: 1px solid #ccc; /* Define a borda */
+    width: 60%; /* Aumenta a largura da barra de seleção */
+    max-width: 100px; /* Define um tamanho máximo */
+    padding: 0; /* Adiciona preenchimento interno */
+    border: 1px solid #dd0606; /* Define a borda */
     border-radius: 4px; /* Arredonda os cantos */
-    font-size: 16px; /* Aumenta o tamanho da fonte */
+    font-size: 10px; /* Aumenta o tamanho da fonte */
     margin-bottom: 20px; /* Adiciona espaço abaixo */
     background-color: #ffffff; /* Cor de fundo */
 }
 
 /* Estilo para o rótulo da seleção */
 .label-select {
-    font-size: 18px; /* Aumenta o tamanho do rótulo */
+    font-size: 10px; /* Aumenta o tamanho do rótulo */
     margin-bottom: 10px; /* Espaço abaixo do rótulo */
     color: #333; /* Cor do texto */
 }
@@ -340,5 +413,28 @@ button:hover {
         position: relative;
         right: auto;
         text-align: center; /* Centraliza o texto em telas menores */
+    }
+}
+
+/* Centralização do contêiner de seleção */
+.selection-container {
+    display: flex;
+    justify-content: space-around; /* Centraliza o contêiner na página */
+    align-items: center; /* Alinha o conteúdo verticalmente ao centro */
+    flex-direction: column; /* Organiza os itens verticalmente */
+    margin: 20px auto; /* Adiciona margem automática para centralização horizontal */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 220%; /* Tamanho completo */
+    max-width: 800px; /* Define uma largura máxima para não ocupar 100% */
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+    .selection-container {
+        max-width: 100%; /* O contêiner ocupa toda a largura em dispositivos móveis */
+        padding: 10px; /* Reduz o padding em telas menores */
     }
 }
