@@ -681,6 +681,6 @@ def logout():
     return redirect('/login')
 
 
- #Executando a aplicação
+ # Executando a aplicação
 if __name__ == '__main__':
-    app_dash.run( )
+    app_dash.run(server=server)
