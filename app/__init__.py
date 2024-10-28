@@ -24,6 +24,7 @@ from flask import Flask, request, redirect, render_template, session, url_for, f
 
 # Inicializando o Flask
 server = Flask(__name__)
+
 #app = Flask(__name__)
 server.secret_key = 'E4szBdssrjeeYOp1o4XiuH8QJruHXQ1g'
 
@@ -33,7 +34,7 @@ server.config['MAIL_SERVER'] = 'smtp.gmail.com'
 server.config['MAIL_PORT'] = 587
 server.config['MAIL_USE_TLS'] = True
 server.config['MAIL_USERNAME'] = 'andreandson09@gmail.com'  # Seu email
-server.config['MAIL_PASSWORD'] = 'cjuk badq koxo xhkj'            # Sua senha do email
+server.config['MAIL_PASSWORD'] = 'cjuk badq koxo xhkj'            # Api do email
 server.config['MAIL_DEFAULT_SENDER'] = 'andreandson09@gmail.com'
 
 mail = Mail(server)
@@ -95,8 +96,7 @@ sidebar = html.Div(
                 html.Hr(),
                 dbc.Nav(
                     [
-                        dbc.NavLink("Home", href="/home", active="exact"),
-                        
+                        #dbc.NavLink("Home", href="/home", active="exact"),#
                         dbc.NavLink("Tabela", href="https://tabela-8fdd318c24e8.herokuapp.com/", active="exact"),
                     ],
                     vertical=True,
@@ -581,7 +581,6 @@ def update_graphs(selected_years, selected_countries):
     Output('page-content', 'children'),
     Input('url', 'pathname')  # Observa mudanças na URL
 )
-
 
 # Rota para a página Home
 @server.route('/home')
