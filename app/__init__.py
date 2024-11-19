@@ -3,6 +3,7 @@ import redis
 import json
 import dash
 import logging
+import os
 import pandas as pd
 import numpy as np
 import plotly.colors
@@ -97,6 +98,7 @@ sidebar = html.Div(
                 dbc.Nav(
                     [
                         #dbc.NavLink("Home", href="/home", active="exact"),#
+                        #dbc.NavLink("Home", href="/home", active="exact"),
                         dbc.NavLink("Tabela", href="https://tabela-8fdd318c24e8.herokuapp.com/", active="exact"),
                     ],
                     vertical=True,
@@ -582,14 +584,21 @@ def update_graphs(selected_years, selected_countries):
     Input('url', 'pathname')  # Observa mudanças na URL
 )
 
+def display_page(pathname):
+    if pathname == '/home':
+        return render_template('home.html')  # Renderiza a página Home
+    elif pathname == '/login':
+        return render_template('login.html')  # Renderiza a página de login
+    elif pathname == '/register':
+        return render_template('register.html')  # Renderiza a página de registro
+    elif pathname == '/recover_password':
+        return render_template('recover_password.html')  # Renderiza a página de recuperação de senha
+    
 # Rota para a página Home
 @server.route('/home')
 def home():
     return render_template('home.html')  # arquivo 'home.html'
 
-@server.route('/')
-def index():
-    return redirect(url_for('home'))
 
 # Rota para a página de login
 @server.route('/login', methods=['GET', 'POST'])
@@ -680,7 +689,12 @@ def logout():
     session.pop('email', None)  # Remover a sessão do usuário
     return redirect('/login')
 
+@server.route('/')
+def index():
+       
+    return render_template('home.html')  # Página inicial gerenciada pelo Flask
 
- # Executando a aplicação
+
 if __name__ == '__main__':
-    app_dash.run(server=server)
+    port = int(os.environ.get('PORT', 8050))  # Porta para o Heroku
+    server.run(host='0.0.0.0', port=port)
