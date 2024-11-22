@@ -98,7 +98,7 @@ sidebar = html.Div(
                 dbc.Nav(
                     [
                         #dbc.NavLink("Home", href="/home", active="exact"),#
-                        dbc.NavLink("Home", href="/home", active="exact"),
+                        dbc.NavLink("Home", href="https://dashboardcraval-8894b30f8c48.herokuapp.com/", active="exact"),
                         dbc.NavLink("Tabela", href="https://tabela-8fdd318c24e8.herokuapp.com/", active="exact"),
                     ],
                     vertical=True,
