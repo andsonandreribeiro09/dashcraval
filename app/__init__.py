@@ -692,10 +692,10 @@ def logout():
 @server.route('/')
 def index():
        
-    return app_dash ('home.html')  # Página inicial gerenciada pelo Flask
+    return render_template('home.html')  # Página inicial gerenciada pelo Flas
 
 
 # Executando a aplicação
 if __name__ == '__main__':
-    app_dash.run(server=server)
+    server.run( )
     
