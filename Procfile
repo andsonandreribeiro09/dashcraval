@@ -1,4 +1,4 @@
-﻿web: gunicorn app:server
+﻿web: gunicorn init:server
 
 
 
