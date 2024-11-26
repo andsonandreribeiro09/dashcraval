@@ -100,6 +100,7 @@ sidebar = html.Div(
                         dbc.NavLink("Home", href="https://dashboardcraval-8894b30f8c48.herokuapp.com/", active="exact"),
                         dbc.NavLink("Metrica", href="https://dashcraval-c97ea889b859.herokuapp.com/", active="exact"),
                         dbc.NavLink("Tabela", href="https://tabela-8fdd318c24e8.herokuapp.com/", active="exact"),
+                        dbc.NavLink("Craval IA", href="https://chat.mistral.ai/chat?model=ag:e336095c:20241025:untitled-agent:d6fa2a41", active="exact"),
                     ],
                     vertical=True,
                     pills=True,
